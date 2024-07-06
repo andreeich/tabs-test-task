@@ -10,7 +10,7 @@ function getIcon(name: string) {
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
 				>
-					<g clip-path="url(#prefix__clip0_1_267)">
+					<g clipPath="url(#prefix__clip0_1_267)">
 						<path
 							d="M0 14.667h16V16H0v-1.333zm16-9.394v1.394h-2v6.666H2V6.667H0V5.273a2 2 0 011.042-1.756l6-3.273a1.995 1.995 0 011.916 0l6 3.273A2 2 0 0116 5.273zM3.333 12h2V6.667h-2V12zm3.334-5.333V12h2.666V6.667H6.667zm6 0h-2V12h2V6.667zm2-1.394a.667.667 0 00-.348-.586l-6-3.272a.667.667 0 00-.638 0l-6 3.272a.667.667 0 00-.348.586v.06h13.334v-.06z"
 							fill="currentColor"
@@ -26,7 +26,7 @@ function getIcon(name: string) {
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
 				>
-					<g clip-path="url(#prefix__clip0_1_289)">
+					<g clipPath="url(#prefix__clip0_1_289)">
 						<path
 							d="M15.281 1.133a1.99 1.99 0 00-1.638-.432l-4.12.749A2.662 2.662 0 008 2.307a2.662 2.662 0 00-1.523-.859L2.357.699A2 2 0 000 2.667v11.222l8 1.456 8-1.456V2.667a1.995 1.995 0 00-.719-1.534zM7.333 13.867l-6-1.09V2.667a.667.667 0 01.786-.656l4.12.749a1.333 1.333 0 011.094 1.312v9.795zm7.334-1.091l-6 1.09V4.073A1.333 1.333 0 019.76 2.76l4.12-.749a.666.666 0 01.786.656v10.109z"
 							fill="currentColor"
@@ -42,7 +42,7 @@ function getIcon(name: string) {
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
 				>
-					<g clip-path="url(#prefix__clip0_1_206)">
+					<g clipPath="url(#prefix__clip0_1_206)">
 						<path
 							d="M14 0H2a2 2 0 00-2 2v14h16V2a2 2 0 00-2-2zm.667 2v1.333H10v-2h4a.667.667 0 01.667.667zm-7.334-.667h1.334v4H7.333v-4zM2 1.333h4v2H1.333V2A.667.667 0 012 1.333zm-.667 13.334v-10H6v2h4v-2h4.667v10H1.333zM10 12h3.333v1.333H10V12z"
 							fill="currentColor"
@@ -58,7 +58,7 @@ function getIcon(name: string) {
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
 				>
-					<g clip-path="url(#prefix__clip0_1_305)">
+					<g clipPath="url(#prefix__clip0_1_305)">
 						<path
 							d="M14 .667H2a2 2 0 00-2 2v12.666h16V2.667a2 2 0 00-2-2zM2 2h12a.667.667 0 01.667.667v2H1.333v-2A.667.667 0 012 2zm-.667 12V6h13.334v8H1.333zm2-6h9.334v1.333H3.333V8zm0 2.667H10V12H3.333v-1.333zM2 3.333a.667.667 0 111.333 0 .667.667 0 01-1.333 0zm2 0a.667.667 0 111.333 0 .667.667 0 01-1.333 0zm2 0a.667.667 0 111.333 0 .667.667 0 01-1.333 0z"
 							fill="currentColor"
@@ -74,7 +74,7 @@ function getIcon(name: string) {
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
 				>
-					<g clip-path="url(#prefix__prefix__clip0_1_282)">
+					<g clipPath="url(#prefix__prefix__clip0_1_282)">
 						<path
 							d="M8 0a8 8 0 100 16A8 8 0 008 0zm6.633 7.333H8.667V1.367a6.677 6.677 0 015.966 5.966zM1.333 8a6.675 6.675 0 016-6.633v6.909l4.883 4.883A6.662 6.662 0 011.333 8zm11.826 4.216l-3.55-3.55h5.024a6.628 6.628 0 01-1.474 3.55z"
 							fill="currentColor"
@@ -105,7 +105,7 @@ function getIcon(name: string) {
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
 				>
-					<g clip-path="url(#prefix__clip0_1_293)">
+					<g clipPath="url(#prefix__clip0_1_293)">
 						<path
 							d="M8.081 0l-7 4v8l7 4 7-4V4l-7-4zm5.01 4.4L8.007 7.235 3.115 4.373l4.966-2.84 5.01 2.867zM2.414 5.508l4.918 2.875v5.654l-4.918-2.811V5.508zm6.252 8.621V8.391l5.081-2.834v5.667l-5.081 2.905z"
 							fill="currentColor"
@@ -135,7 +135,7 @@ function getIcon(name: string) {
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
 				>
-					<g clip-path="url(#prefix__clip0_1_297)" fill="currentColor">
+					<g clipPath="url(#prefix__clip0_1_297)" fill="currentColor">
 						<path d="M16 2.667H4.667V4H16V2.667zM16 7.333H4.667v1.333H16V7.333zM16 12H4.667v1.333H16V12zM1.333 4.667a1.333 1.333 0 100-2.667 1.333 1.333 0 000 2.667zM1.333 9.334a1.333 1.333 0 100-2.667 1.333 1.333 0 000 2.667zM1.333 14a1.333 1.333 0 100-2.667 1.333 1.333 0 000 2.667z" />
 					</g>
 				</svg>
@@ -162,7 +162,7 @@ function getIcon(name: string) {
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
 				>
-					<g clip-path="url(#prefix__clip0_1_272)">
+					<g clipPath="url(#prefix__clip0_1_272)">
 						<path
 							d="M9.467 10.84A8.089 8.089 0 015.165 6.53L7.43 4.258 3.258.081 1.144 2.195A3.933 3.933 0 000 5c0 4.832 6.168 11 11 11a3.926 3.926 0 002.805-1.144l2.114-2.114-4.177-4.177-2.275 2.276zm3.394 3.073a2.6 2.6 0 01-1.86.754c-4.156 0-9.668-5.512-9.668-9.667a2.605 2.605 0 01.754-1.862l1.171-1.171L5.55 4.258 3.593 6.215l.163.409a9.582 9.582 0 005.631 5.624l.404.154 1.951-1.951 2.291 2.291-1.171 1.171zM9.333 1.333V0A6.674 6.674 0 0116 6.667h-1.333a5.34 5.34 0 00-5.334-5.334zm0 2.667V2.667a4.004 4.004 0 014 4H12A2.667 2.667 0 009.333 4z"
 							fill="currentColor"
@@ -178,7 +178,7 @@ function getIcon(name: string) {
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
 				>
-					<g clip-path="url(#prefix__clip0_1_333)">
+					<g clipPath="url(#prefix__clip0_1_333)">
 						<path
 							d="M6.045 10.898l3.267 3.267.471-.471a5.318 5.318 0 001.384-5.08l-.164-.666 1.39-1.391.145.145a2.057 2.057 0 002.625.266 2 2 0 00.254-3.043L12.133.636A2.056 2.056 0 009.508.37a2 2 0 00-.253 3.043l.195.195L8.057 5 7.4 4.84A5.323 5.323 0 002.31 6.22l-.472.472 3.267 3.263-4.91 4.907.943.943 4.907-4.907zm1.026-4.764l1.4.342 2.867-2.866-1.143-1.138a.667.667 0 01.09-1.019.723.723 0 01.904.127l3.282 3.282a.666.666 0 01-.089 1.019.722.722 0 01-.904-.127l-1.087-1.087-2.867 2.867.345 1.407a3.984 3.984 0 01-.6 3.297L3.764 6.734a3.99 3.99 0 013.307-.6z"
 							fill="currentColor"
@@ -194,7 +194,7 @@ function getIcon(name: string) {
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
 				>
-					<g clip-path="url(#prefix__clip0_1_285)">
+					<g clipPath="url(#prefix__clip0_1_285)">
 						<path
 							d="M10 16H6v-2.342a6.002 6.002 0 01-1.9-1.097l-2.028 1.172-2-3.466L2.1 9.097a6.067 6.067 0 010-2.194L.072 5.733l2-3.466L4.1 3.439A6 6 0 016 2.342V0h4v2.342A6 6 0 0111.9 3.439l2.029-1.172 2 3.466-2.029 1.17a6.07 6.07 0 010 2.194l2.029 1.17-2 3.466-2.03-1.172A6 6 0 0110 13.658V16zm-2.666-1.333h1.333v-2.018l.5-.13a4.656 4.656 0 002.163-1.252l.362-.369 1.748 1.01.667-1.155-1.747-1.008.138-.498a4.698 4.698 0 000-2.5l-.138-.497 1.747-1.009-.667-1.154-1.748 1.012-.362-.366a4.656 4.656 0 00-2.162-1.25l-.501-.132V1.333H7.334v2.018l-.501.13A4.656 4.656 0 004.67 4.733l-.362.369L2.56 4.089l-.666 1.155L3.64 6.253l-.137.497a4.699 4.699 0 000 2.5l.137.497-1.746 1.009.666 1.155L4.31 10.9l.362.368a4.656 4.656 0 002.162 1.25l.5.13v2.018zm.666-4a2.667 2.667 0 110-5.334 2.667 2.667 0 010 5.334zm0-4a1.333 1.333 0 100 2.666 1.333 1.333 0 000-2.666z"
 							fill="currentColor"
@@ -224,7 +224,7 @@ function getIcon(name: string) {
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
 				>
-					<g clip-path="url(#prefix__clip0_1_301)" fill="currentColor">
+					<g clipPath="url(#prefix__clip0_1_301)" fill="currentColor">
 						<path d="M13.443 8.667h-9.83l-.628-5.334H8V2H2.828L2.8 1.765A2 2 0 00.815 0H0v1.333h.815a.667.667 0 01.662.589l1.056 8.979a2 2 0 001.986 1.766h8.814v-1.334H4.52a.666.666 0 01-.662-.589L3.769 10h10.788l.6-3.333h-1.354l-.36 2zM4.667 16a1.333 1.333 0 100-2.666 1.333 1.333 0 000 2.666zM11.333 16a1.333 1.333 0 100-2.666 1.333 1.333 0 000 2.666z" />
 						<path d="M11.385 5.695h.022a1.249 1.249 0 00.89-.369l3.508-3.507-.943-.943-3.454 3.458-1.496-1.56-.96.924 1.537 1.6a1.248 1.248 0 00.896.397z" />
 					</g>
@@ -280,7 +280,6 @@ export interface IconProps extends React.SVGAttributes<SVGElement> {
 }
 
 export function Icon({ className, variant, ...props }: IconProps) {
-	console.log(variant, getIcon(variant));
 	const icon: React.ReactNode = getIcon(variant);
 	return cloneElement(icon, { className, ...props });
 }

@@ -1,5 +1,5 @@
 export interface IntTab {
-  id: string;
+  id: number;
   name: string;
   iconName: string;
   isPinned: boolean;
@@ -7,109 +7,109 @@ export interface IntTab {
 
 export const tabsData: IntTab[] = [
   {
-    id: "1",
+    id: 1,
     name: "Lagerverwaltung",
     iconName: "box",
     isPinned: true,
   },
   {
-    id: "2",
+    id: 2,
     name: "Dashboard",
     iconName: "dashboard",
     isPinned: false,
   },
   {
-    id: "3",
+    id: 3,
     name: "Banking",
     iconName: "bank",
     isPinned: false,
   },
   {
-    id: "4",
+    id: 4,
     name: "Telefonie",
     iconName: "phone-call",
     isPinned: false,
   },
   {
-    id: "5",
+    id: 5,
     name: "Accounting",
     iconName: "user-add",
     isPinned: false,
   },
   {
-    id: "6",
+    id: 6,
     name: "Verkauf",
     iconName: "shop",
     isPinned: false,
   },
   {
-    id: "7",
+    id: 7,
     name: "Statistik",
     iconName: "chart-pie",
     isPinned: false,
   },
   {
-    id: "8",
+    id: 8,
     name: "Post Office",
     iconName: "mail",
     isPinned: false,
   },
   {
-    id: "9",
+    id: 9,
     name: "Administration",
     iconName: "settings",
     isPinned: false,
   },
   {
-    id: "10",
+    id: 10,
     name: "Help",
     iconName: "book",
     isPinned: false,
   },
   {
-    id: "11",
+    id: 11,
     name: "Warenbestand",
     iconName: "cube",
     isPinned: false,
   },
   {
-    id: "12",
+    id: 12,
     name: "Auswahlilsten",
     iconName: "list",
     isPinned: false,
   },
   {
-    id: "13",
+    id: 13,
     name: "Einkauf",
     iconName: "shopping-card",
     isPinned: false,
   },
   {
-    id: "14",
+    id: 14,
     name: "Rechn",
     iconName: "browser",
     isPinned: false,
   },
   {
-    id: "15",
+    id: 15,
     name: "Lagerverwaltung",
     iconName: "box",
     isPinned: false,
   },
   {
-    id: "16",
+    id: 16,
     name: "Verkauf",
     iconName: "shop",
     isPinned: false,
   },
   {
-    id: "17",
+    id: 17,
     name: "Post Office",
     iconName: "mail",
     isPinned: false,
   },
   {
-    id: "18",
+    id: 18,
     name: "Telefonie",
     iconName: "phone-call",
     isPinned: false,

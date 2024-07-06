@@ -24,7 +24,7 @@ const TabsTrigger = React.forwardRef<
 	<TabsPrimitive.Trigger
 		ref={ref}
 		className={cn(
-			"inline-flex items-center justify-center gap-2.5 whitespace-nowrap px-5 py-4 text-sm ring-offset-white transition-all focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-background-default text-foreground-default data-[state=active]:bg-background-active data-[state=active]:text-foreground-active dark:ring-offset-slate-950 dark:data-[state=active]:bg-slate-950 dark:data-[state=active]:text-slate-50 border-t-2 border-transparent data-[state=active]:border-background-blue",
+			"inline-flex items-center justify-center gap-2.5 whitespace-nowrap px-5 py-3.5 text-sm ring-offset-white transition-all focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-background-default text-foreground-default data-[state=active]:bg-background-active data-[state=active]:text-foreground-active dark:ring-offset-slate-950 dark:data-[state=active]:bg-slate-950 dark:data-[state=active]:text-slate-50 border-t-2 border-transparent data-[state=active]:border-background-blue",
 			className,
 		)}
 		{...props}
@@ -39,7 +39,7 @@ const TabsContent = React.forwardRef<
 	<TabsPrimitive.Content
 		ref={ref}
 		className={cn(
-			"mt-2 ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300",
+			"mt-2 ring-offset-white bg-white p-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300",
 			className,
 		)}
 		{...props}

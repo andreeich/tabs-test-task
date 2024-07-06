@@ -16,6 +16,9 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      serif: ["Poppins", "sans-serif"],
+    },
     extend: {
       colors: {
         background: {
