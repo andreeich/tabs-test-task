@@ -1,30 +1,57 @@
-# React + TypeScript + Vite
+# Exonn Tabs Test Task
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## README
 
-Currently, two official plugins are available:
+### Опис проекту
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Цей проект реалізує систему керування табами з використанням Vite, React, Shadcn, react-beautiful-dnd, usehooks-ts та Tailwind. У цьому проекті реалізовано такі функціональності:
 
-## Expanding the ESLint configuration
+1. **Перетаскування табів**
+2. **Прикріплення табів**
+3. **Скролінг табів**
+4. **Збереження стану табів**
+5. **Інтеграція з рутером**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Функціональності
 
-- Configure the top-level `parserOptions` property like this:
+#### Перетаскування
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
+- Закріплені таби не можуть бути переміщені на місце незакріплених табів і навпаки.
+- Перетаскування табів здійснюється за ліву частину табу.
+
+#### Прикріплення
+
+- Закріплені таби не скроляться разом з іншими табами і завжди повинні бути видимі.
+
+#### Скролінг
+
+- Таби, які не вмістилися у видиму область контейнера, відображаються у випадаючому списку.
+- На краях контейнера відображаються тіні, якщо є таби, які не вмістилися у видиму область.
+
+#### Збереження стану
+
+- Після перезавантаження сторінки стан табів не скидається.
+
+#### Інтеграція з рутером
+
+- Кожному табу присвоєно URL. При зміні активного табу здійснюється навігація на URL цього табу.
+
+### Особливості
+
+Розрахунок вільного місця виконується debounce функцією з пакета usehooks-ts з затримкою 100мс.
+
+### Скрипти для запуску
+
+- `dev`: Запускає проект в режимі розробки.
+- `build`: Компілює TypeScript і створює білд проекту.
+- `lint`: Запускає ESLint для перевірки коду.
+- `preview`: Запускає прев'ю білда проекту.
+
+```json
+"scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
 }
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list

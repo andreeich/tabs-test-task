@@ -1,104 +1,19 @@
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDebounceCallback } from "usehooks-ts";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-	ContextMenu,
-	ContextMenuContent,
-	ContextMenuItem,
-	ContextMenuTrigger,
-} from "@/components/ui/context-menu";
+import { Tabs, TabsContent, TabsList } from "@/components/ui/tabs";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
-	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Icon } from "@/components/icon";
-import { cn } from "@/lib/utils";
+import { TabItem } from "@/components/tab-item";
+import { DropdownTabItem } from "@/components/dropdown-tab-item";
 
-import { type IntTab, tabsData } from "./data/tabs";
-
-interface IntTabItem {
-	tabItem: IntTab;
-	onClick: (tabId: IntTab["id"]) => void;
-	onPin: (tabItem: IntTab) => void;
-}
-
-const TabItem = forwardRef<HTMLButtonElement, IntTabItem>(
-	({ tabItem, onClick, onPin, ...props }, ref) => {
-		return (
-			<ContextMenu>
-				<ContextMenuTrigger>
-					<TabsTrigger
-						value={tabItem.id}
-						onClick={() => onClick(tabItem.id)}
-						className={cn("h-full", !tabItem.isPinned ? "w-full" : undefined)}
-						data-pinned={tabItem.isPinned}
-						ref={ref}
-						{...props}
-					>
-						<div className="flex-shrink-0">
-							<Icon variant={tabItem.iconName} />
-						</div>
-						{!tabItem.isPinned ? tabItem.name : undefined}
-					</TabsTrigger>
-				</ContextMenuTrigger>
-				<ContextMenuContent>
-					<ContextMenuItem onClick={() => onPin(tabItem)}>
-						<Icon variant="pin" />
-						{tabItem.isPinned ? "Unpin" : "Pin"} anpinnen
-					</ContextMenuItem>
-				</ContextMenuContent>
-			</ContextMenu>
-		);
-	},
-);
-TabItem.displayName = "TabItem";
-
-interface IntDropdownTabItem extends IntTabItem {
-	onDelete: (id: IntTab["id"]) => void;
-}
-
-function DropdownTabItem({
-	tabItem,
-	onClick,
-	onPin,
-	onDelete,
-}: IntDropdownTabItem) {
-	return (
-		<ContextMenu>
-			<ContextMenuTrigger>
-				<DropdownMenuItem
-					key={tabItem.id}
-					onClick={() => onClick(tabItem.id)}
-					className="justify-between"
-				>
-					<TabsTrigger
-						value={tabItem.id}
-						className="h-full !border-none !bg-transparent justify-start p-0"
-					>
-						<Icon variant={tabItem.iconName} />
-						{tabItem.name}
-					</TabsTrigger>
-					<button onClick={() => onDelete(tabItem.id)}>
-						<Icon variant="x" />
-						<span className="sr-only">Delete</span>
-					</button>
-				</DropdownMenuItem>
-			</ContextMenuTrigger>
-			<ContextMenuContent>
-				<ContextMenuItem onClick={() => onPin(tabItem)}>
-					<Icon variant="pin" />
-					{tabItem.isPinned ? "Unpin" : "Pin"} anpinnen
-				</ContextMenuItem>
-			</ContextMenuContent>
-		</ContextMenu>
-	);
-}
+import { type IntTab, tabsData } from "@/data/tabs";
 
 function App() {
 	const [tabs, setTabs] = useState<IntTab[]>(() => {
@@ -145,8 +60,9 @@ function App() {
 		});
 	};
 
+	// saves new position of tabs
 	const handleDropEnd = (result: any) => {
-		const { destination, source, draggableId } = result;
+		const { destination, source } = result;
 
 		if (!destination) return;
 
@@ -164,6 +80,7 @@ function App() {
 		setTabs(pinnedTabs.concat(newTabs));
 	};
 
+	// deleting tab from a tabs list
 	const handleDelete = (id: IntTab["id"]) => {
 		const newTabs = fullTabs.filter((tab) => tab.id !== id);
 		setTabs(newTabs);
@@ -209,7 +126,7 @@ function App() {
 
 	return (
 		<div className="flex h-screen">
-			<aside className="w-[92px]" />
+			<aside className="w-[92px] flex-shrink-0" />
 			<div className="flex flex-col w-full h-full">
 				<div className="h-[69px]" />
 				<Tabs
@@ -222,6 +139,7 @@ function App() {
 							className="w-full overflow-hidden relative flex"
 						>
 							<DragDropContext onDragEnd={handleDropEnd}>
+								{/* pinned tabs */}
 								<TabsList>
 									{pinnedTabs.map((t) => (
 										<TabItem
@@ -232,6 +150,7 @@ function App() {
 										/>
 									))}
 								</TabsList>
+								{/* draggable unpinned tabs */}
 								<Droppable droppableId="tabs" direction="horizontal">
 									{(provided) => (
 										<TabsList
@@ -247,15 +166,24 @@ function App() {
 														draggableId={t.id.toString()}
 														index={i}
 													>
-														{(provided) => (
-															<TabItem
+														{(provided, snapshot) => (
+															<div
 																ref={provided.innerRef}
 																{...provided.draggableProps}
 																{...provided.dragHandleProps}
-																tabItem={t}
-																onClick={handleClick}
-																onPin={handlePin}
-															/>
+																className="w-full"
+															>
+																<TabItem
+																	tabItem={t}
+																	onClick={handleClick}
+																	onPin={handlePin}
+																	className={
+																		snapshot.isDragging
+																			? "bg-background-drag text-white"
+																			: undefined
+																	}
+																/>
+															</div>
 														)}
 													</Draggable>
 												))}
@@ -265,6 +193,7 @@ function App() {
 								</Droppable>
 							</DragDropContext>
 
+							{/* invisible tabs container that is used for calculating needed space for tabs */}
 							<TabsList
 								ref={absoluteTabsContainerRef}
 								className="absolute invisible"
@@ -279,6 +208,7 @@ function App() {
 								))}
 							</TabsList>
 						</div>
+						{/* blue dropdown button */}
 						<DropdownMenu>
 							<span>
 								<DropdownMenuTrigger asChild>
@@ -319,6 +249,7 @@ function App() {
 							</DropdownMenuContent>
 						</DropdownMenu>
 					</div>
+					{/* tabs content section */}
 					<div className="p-5 bg-background-active h-full">
 						{tabs.map((t) => (
 							<TabsContent
