@@ -28,6 +28,9 @@ module.exports = {
           default: "#7F858D",
           active: "#343434",
         },
+        border: {
+          default: "#E9E9E9B2",
+        },
       },
       keyframes: {
         "accordion-down": {
