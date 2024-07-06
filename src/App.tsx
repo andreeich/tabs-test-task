@@ -16,9 +16,66 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Icon } from "@/components/icon";
+import { cn } from "@/lib/utils";
 
 import { type IntTab, tabsData } from "./data/tabs";
-import Pin from "./assets/pin.svg";
+
+interface IntTabItem {
+	tabItem: IntTab;
+	onClick: (tabId: IntTab["id"]) => void;
+	onPin: (tabItem: IntTab) => void;
+}
+
+function TabItem({ tabItem, onClick, onPin }: IntTabItem) {
+	return (
+		<ContextMenu>
+			<ContextMenuTrigger>
+				<TabsTrigger
+					value={tabItem.id}
+					onClick={() => onClick(tabItem.id)}
+					className={cn("h-full", !tabItem.isPinned ? "w-full" : undefined)}
+					data-pinned={tabItem.isPinned}
+				>
+					<div className="flex-shrink-0">
+						<Icon variant={tabItem.iconName} />
+					</div>
+					{!tabItem.isPinned ? tabItem.name : undefined}
+				</TabsTrigger>
+			</ContextMenuTrigger>
+			<ContextMenuContent>
+				<ContextMenuItem onClick={() => onPin(tabItem)}>
+					<Icon variant="pin" />
+					{tabItem.isPinned ? "Unpin" : "Pin"} anpinnen
+				</ContextMenuItem>
+			</ContextMenuContent>
+		</ContextMenu>
+	);
+}
+
+function DropdownTabItem({ tabItem, onClick, onPin }: IntTabItem) {
+	return (
+		<ContextMenu>
+			<ContextMenuTrigger>
+				<DropdownMenuItem key={tabItem.id} onClick={() => onClick(tabItem.id)}>
+					<TabsTrigger
+						value={tabItem.id}
+						className="h-full !border-none !bg-transparent justify-start p-0"
+					>
+						<Icon variant={tabItem.iconName} />
+						{tabItem.name}
+					</TabsTrigger>
+				</DropdownMenuItem>
+			</ContextMenuTrigger>
+			<ContextMenuContent>
+				<ContextMenuItem onClick={() => onPin(tabItem)}>
+					<Icon variant="pin" />
+					{tabItem.isPinned ? "Unpin" : "Pin"} anpinnen
+				</ContextMenuItem>
+			</ContextMenuContent>
+		</ContextMenu>
+	);
+}
 
 function App() {
 	const [tabs, setTabs] = useState<IntTab[]>(() => {
@@ -114,28 +171,14 @@ function App() {
 						ref={tabsContainerRef}
 						className="w-full overflow-hidden relative"
 					>
-						<TabsList>
+						<TabsList className="w-full">
 							{fullTabs.slice(0, overflowIndex).map((t) => (
-								<ContextMenu key={t.id}>
-									<ContextMenuTrigger>
-										<TabsTrigger
-											value={t.id}
-											onClick={() => handleClick(t.id)}
-											className="h-full"
-										>
-											<div className="flex-shrink-0">
-												<img src={t.iconSrc} alt={t.name} />
-											</div>
-											{!t.isPinned ? t.name : undefined}
-										</TabsTrigger>
-									</ContextMenuTrigger>
-									<ContextMenuContent>
-										<ContextMenuItem onClick={() => handlePin(t)}>
-											<img src={Pin} alt="Pin" />
-											{t.isPinned ? "Unpin" : "Pin"} anpinnen
-										</ContextMenuItem>
-									</ContextMenuContent>
-								</ContextMenu>
+								<TabItem
+									key={t.id}
+									tabItem={t}
+									onClick={handleClick}
+									onPin={handlePin}
+								/>
 							))}
 						</TabsList>
 						<TabsList
@@ -143,22 +186,12 @@ function App() {
 							className="absolute invisible"
 						>
 							{fullTabs.map((t) => (
-								<ContextMenu key={t.id}>
-									<ContextMenuTrigger>
-										<TabsTrigger value={t.id} className="h-full">
-											<div className="flex-shrink-0">
-												<img src={t.iconSrc} alt={t.name} />
-											</div>
-											{!t.isPinned ? t.name : undefined}
-										</TabsTrigger>
-									</ContextMenuTrigger>
-									<ContextMenuContent>
-										<ContextMenuItem onClick={() => handlePin(t)}>
-											<img src={Pin} alt="Pin" />
-											{t.isPinned ? "Unpin" : "Pin"} anpinnen
-										</ContextMenuItem>
-									</ContextMenuContent>
-								</ContextMenu>
+								<TabItem
+									key={t.id}
+									tabItem={t}
+									onClick={handleClick}
+									onPin={handlePin}
+								/>
 							))}
 						</TabsList>
 					</div>
@@ -173,12 +206,12 @@ function App() {
 										fill="none"
 										xmlns="http://www.w3.org/2000/svg"
 									>
+										<title>More tabs</title>
 										<path
 											d="M4.5 0.45L0 4.95L1.05 6L4.5 2.55L7.95 6L9 4.95L4.5 0.45Z"
 											fill="currentColor"
 										/>
 									</svg>
-									<span className="sr-only">More tabs</span>
 								</button>
 							</DropdownMenuTrigger>
 						</span>
@@ -186,18 +219,12 @@ function App() {
 							<ScrollArea className="max-h-[50vh] h-80">
 								<TabsList className="flex-col items-stretch px-4">
 									{fullTabs.slice(overflowIndex)?.map((t) => (
-										<DropdownMenuItem
+										<DropdownTabItem
 											key={t.id}
-											onClick={() => handleClick(t.id)}
-										>
-											<TabsTrigger
-												value={t.id}
-												className="h-full !border-none !bg-transparent justify-start p-0"
-											>
-												<img src={t.iconSrc} alt={t.name} />
-												{t.name}
-											</TabsTrigger>
-										</DropdownMenuItem>
+											tabItem={t}
+											onClick={handleClick}
+											onPin={handlePin}
+										/>
 									))}
 								</TabsList>
 							</ScrollArea>

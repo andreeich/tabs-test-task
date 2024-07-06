@@ -5,3 +5,7 @@
 body {
   @apply max-w-full overflow-hidden;
 }
+
+div[role="tablist"] > span[data-state]:has(button:not([data-pinned="true"])) {
+  @apply w-full;
+}
