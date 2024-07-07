@@ -105,7 +105,7 @@ function App() {
 		// if index was not found don't change overflowIndex
 		if (index !== 0) setOverflowIndex(index);
 	}
-	const debouncedCalcVisibleTabs = useDebounceCallback(calcVisibleTabs, 100);
+	const debouncedCalcVisibleTabs = useDebounceCallback(calcVisibleTabs, 10);
 
 	// saving tabs to localStorage on change
 	useEffect(() => {

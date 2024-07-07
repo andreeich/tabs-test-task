@@ -2,50 +2,50 @@
 
 ## README
 
-### Опис проекту
+### Project Description
 
-Цей проект реалізує систему керування табами з використанням Vite, React, Shadcn, react-beautiful-dnd, usehooks-ts та Tailwind. У цьому проекті реалізовано такі функціональності:
+This project implements a tab management system using Vite, React, Shadcn, react-beautiful-dnd, usehooks-ts, and Tailwind. The following functionalities are implemented in this project:
 
-1. **Перетаскування табів**
-2. **Прикріплення табів**
-3. **Скролінг табів**
-4. **Збереження стану табів**
-5. **Інтеграція з рутером**
+1. **Tab Dragging**
+2. **Tab Pinning**
+3. **Tab Scrolling**
+4. **Tabs State Persistence**
+5. **Integration with Router**
 
-### Функціональності
+### Functionalities
 
-#### Перетаскування
+#### Tab Dragging
 
-- Закріплені таби не можуть бути переміщені на місце незакріплених табів і навпаки.
-- Перетаскування табів здійснюється за ліву частину табу.
+- Pinned tabs cannot be moved to the position of unpinned tabs and vice versa.
+- Tabs can be dragged from the **left part** of the tab.
 
-#### Прикріплення
+#### Tab Pinning
 
-- Закріплені таби не скроляться разом з іншими табами і завжди повинні бути видимі.
+- Pinned tabs do not scroll with other tabs and should always remain visible.
 
-#### Скролінг
+#### Tab Scrolling
 
-- Таби, які не вмістилися у видиму область контейнера, відображаються у випадаючому списку.
-- На краях контейнера відображаються тіні, якщо є таби, які не вмістилися у видиму область.
+- Tabs that do not fit within the visible area of the container are displayed in a dropdown list.
+- Shadows appear at the edges of the container if there are tabs that do not fit within the visible area.
 
-#### Збереження стану
+#### Tabs State Persistence
 
-- Після перезавантаження сторінки стан табів не скидається.
+- After page reload, the state of tabs is preserved.
 
-#### Інтеграція з рутером
+#### Integration with Router
 
-- Кожному табу присвоєно URL. При зміні активного табу здійснюється навігація на URL цього табу.
+- Each tab is assigned a URL. When the active tab changes, navigation to the URL of that tab occurs.
 
-### Особливості
+### Features
 
-Розрахунок вільного місця виконується debounce функцією з пакета usehooks-ts з затримкою 100мс.
+Free space calculation is performed using a debounce function from the usehooks-ts package with a delay of 10ms.
 
-### Скрипти для запуску
+### Scripts for Running
 
-- `dev`: Запускає проект в режимі розробки.
-- `build`: Компілює TypeScript і створює білд проекту.
-- `lint`: Запускає ESLint для перевірки коду.
-- `preview`: Запускає прев'ю білда проекту.
+- `dev`: Starts the project in development mode.
+- `build`: Compiles TypeScript and creates a production build of the project.
+- `lint`: Runs ESLint to check the code.
+- `preview`: Launches a preview of the project build.
 
 ```json
 "scripts": {
